@@ -1,0 +1,37 @@
+<% if(productos.length > 0) { %>
+    <div class="row">
+        <table Class="table">
+            <thead>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Thumbnail</th>
+            </thead>
+            <tbody>
+                <% productos.forEach(function(ListProd) { %>
+                    <tr>
+                        <td>
+                            <%- ListProd.title %>
+                        </td>
+                        <td>
+                            <%-ListProd.price%>
+                        </td>
+                        <td>
+                            <%-ListProd.thumbnail%>
+                        </td>
+                    </tr>
+                    <%})%>
+            </tbody>
+        </table>
+    </div>
+    <%} else {%>
+        <br><br>
+        <h3 style="blackground-color: red;">No hay Producto</h3>
+        <br><br>
+        <%}%>
+
+
+            <div class="row">
+                <div class=" offset-1">
+                    <a class="btn btn-warning" href="../"> <i class="fa fa-solid fa-reply "></i> &nbsp; Ingresar Producto</a>
+                </div>
+            </div>

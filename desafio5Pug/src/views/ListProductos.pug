@@ -1,0 +1,25 @@
+extends layout/main.pug    
+block listProductos
+    if productos.length > 0 
+        div(class="row")
+            table(Class="table")
+                thead
+                    th Title
+                    th Price
+                    th Thumbnail
+                tbody
+                each produ in productos
+                    tr
+                        td #{produ.title}
+                        td #{produ.price}
+                        td #{produ.thumbnail}
+    else
+        br
+        br
+        h3(style="blackground-color: red;") No hay Producto
+        br
+        br
+    div(class="row")
+        div(class=" offset-1")
+            a(class="btn btn-warning" href="../") 
+                i(class="fa fa-solid fa-reply ") &nbsp; Ingresar Producto
